@@ -17,7 +17,7 @@ Returns one random English word.
 
 ### GET /api/by_index
 Returns a JSON array with words between the start parameter and start + amount parameter. 
-Words are both stored and returned in alphabetical order.
+Words are both stored and returned in alphabetical order. \
 <strong>Query Parameters:</strong>
 - language -> english (currently optional, more coming soon)
 - start -> 1000 - starts at the 1000th word, which would be absolutize in English.
@@ -27,8 +27,8 @@ GET /api/by_index?start=1000&amount=1000 \
 Returns an array of words 1000 through 2000.
 
 ### GET /api/is_a_word
-Check whether the provided word exists.
-Query Parameters:
+Check whether the provided word exists. \
+<strong>Query Parameters:</strong>
 - language -> english (currently optional, more languages coming soon)
 - word -> the word to check
 <strong>Example:</strong> \
@@ -37,7 +37,7 @@ returns {"is_word": "true"}
 
 ### GET /api/filtered_words
 Filter words by search condition. Regex accepted. \
-Query Parameters:
+<strong>Query Parameters:</strong>
 - language -> english (currently optional, more languages coming soon)
 - filter -> expression to filter by.
 <strong>Example:</strong> \

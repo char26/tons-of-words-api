@@ -19,7 +19,7 @@ delete englishWordsJson; // no need to store the raw json anymore
 app.get('/api/random_word', (req, res) => {
     const language = req.query["language"];
     let randomWord = '';
-    if (language == "english") {
+    if (!language || language == "english") {
         const randomIndex = Math.floor(Math.random() * 370101);
         randomWord = englishWordsArray[randomIndex];
         res.json(randomWord);
@@ -96,6 +96,13 @@ app.get('/api/filtered_words', (req, res) => {
     else {
         res.status(400).send("Language not supported yet!");
     }
+});
+
+/**
+ * Not part of the API, just used for healthchecks.
+ */
+app.get('/ping', (req, res) => {
+    res.send('pong');
 });
 
 app.listen(PORT, () => {
